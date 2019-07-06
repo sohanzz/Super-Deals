@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "955743203197",
+    "firebase_url": "https://super-deals-2da8b.firebaseio.com",
+    "project_id": "super-deals-2da8b",
+    "storage_bucket": "super-deals-2da8b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:955743203197:android:87c036af069bfbae",
+        "android_client_info": {
+          "package_name": "com.asifahmedsohan.superoffer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "955743203197-b0jq1f24a6qi43ias5lm582bkn84ncgb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.asifahmedsohan.superoffer",
+            "certificate_hash": "5a16792afc91f9abd764a5be691463668cdaae68"
+          }
+        },
+        {
+          "client_id": "955743203197-jrngtf0psvris26icti1ah0e7jpcqqj4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDh67JQGP3oResCHHFvB6mpC04gWNylSOQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "955743203197-jrngtf0psvris26icti1ah0e7jpcqqj4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
