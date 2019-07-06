@@ -10,8 +10,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.squareup.picasso.Callback;
-
 
 import com.squareup.picasso.Picasso;
 
@@ -55,40 +53,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         holder.of_desMini.setText(mData.get(position).getDescription_short());
         holder.of_date.setText(mData.get(position).getValidityDate());
 
-
-    /*    Picasso
-                .get()
+        Picasso.with(mContext)
                 .load(mData.get(position).getCompanyLogo())
-                .networkPolicy(NetworkPolicy.OFFLINE)
-                .into(holder.of_logo, new Callback() {
-            @Override
-            public void onSuccess() {
-
-                Log.d("ofln","nooo");
-            }
-
-            @Override
-            public void onError(Exception e) {
-
-                Log.d("ofln","offline");
-
-                Picasso
-                        .get()
-                        .load(mData.get(positn).getCompanyLogo())
-                        .into(hldr.of_logo);
-                    }
-        });
-*/
-
-/*        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(mContext,OfferFull.class);
-                intent.putExtra("description", mData.get(position).getDescription());
-                mContext.startActivity(intent);
-            }
-        });*/
-
+                .into(holder.of_logo);
 
     }
 
