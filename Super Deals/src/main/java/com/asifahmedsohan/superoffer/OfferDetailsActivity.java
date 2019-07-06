@@ -15,7 +15,6 @@ public class OfferDetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_offer_details);
 
         detailOffer=findViewById(R.id.details_offer);
-
         String newString = (String) getIntent().getExtras().get("position");
         detailOffer.setText(newString);
 

@@ -49,8 +49,6 @@ public class MainActivity extends AppCompatActivity {
     private ViewPagerAdapter adapter;
 
     private SliderLayout sliderShow;
-
-
     private AdView mAdView;
 
    //to get user session data
@@ -110,10 +108,6 @@ public class MainActivity extends AppCompatActivity {
             tapview();
             session.setFirstTime(false);
         }
-
-
-
-
     }
 
     private void loadBannerAd() {
@@ -179,11 +173,14 @@ public class MainActivity extends AppCompatActivity {
         // Using Image Slider -----------------------------------------------------------------------
         sliderShow = findViewById(R.id.slider);
 
-
         //populating Image slider
         ArrayList<String> sliderImages = new ArrayList<>();
-        sliderImages.add("https://firebasestorage.googleapis.com/v0/b/super-deals-2da8b.appspot.com/o/sliderImages%2Fdemo0.png?alt=media&token=37169aa1-0747-47d0-bc8e-74271149fe20");
-        sliderImages.add("https://firebasestorage.googleapis.com/v0/b/super-deals-2da8b.appspot.com/o/sliderImages%2Fdemo1.png?alt=media&token=1268df96-9a50-4691-bf60-cf82de5198b8");
+
+        sliderImages.add("https://firebasestorage.googleapis.com/v0/b/super-deals-2da8b.appspot.com/o/sliderImages%2Foffer%20(1).jpg?alt=media&token=d0a728db-6e9f-48c9-9bad-a993228b0628");
+        sliderImages.add("https://firebasestorage.googleapis.com/v0/b/super-deals-2da8b.appspot.com/o/sliderImages%2Foffer%20(2).jpg?alt=media&token=cfe918c1-8c85-4a17-86b3-82ffba2addda");
+        sliderImages.add("https://firebasestorage.googleapis.com/v0/b/super-deals-2da8b.appspot.com/o/sliderImages%2Foffer%20(3).jpg?alt=media&token=7fcbe7a8-dd64-47fa-a0e2-e73a705fcbf6");
+        sliderImages.add("https://firebasestorage.googleapis.com/v0/b/super-deals-2da8b.appspot.com/o/sliderImages%2Foffer%20(4).jpg?alt=media&token=92904bae-fbb0-4877-8a29-10b3b5375369");
+
 
 
         for (String s : sliderImages) {
