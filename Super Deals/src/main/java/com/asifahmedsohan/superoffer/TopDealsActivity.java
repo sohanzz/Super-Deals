@@ -30,11 +30,10 @@ public class TopDealsActivity extends AppCompatActivity implements RecyclerViewA
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_top_deals);
-
         retrieveData();
 
         topOffers = (RecyclerView) findViewById(R.id.top_offers);
-        recyclerAdapter = new RecyclerViewAdapter(this, OfferList,this);
+        recyclerAdapter = new RecyclerViewAdapter(this, OfferList, this);
         topOffers.setLayoutManager(new LinearLayoutManager(this));
         topOffers.setAdapter(recyclerAdapter);
     }
@@ -43,8 +42,6 @@ public class TopDealsActivity extends AppCompatActivity implements RecyclerViewA
 
         databaseReference = FirebaseDatabase.getInstance().getReference().child("topOffers");
         databaseReference.keepSynced(true);
-
-
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -67,9 +64,9 @@ public class TopDealsActivity extends AppCompatActivity implements RecyclerViewA
     @Override
     public void ItemClickListener(int position) {
         OfferList.get(position);
-        Intent intent=new Intent(TopDealsActivity.this, OfferDetailsActivity.class);
-        String value=String.valueOf(position);
-        intent.putExtra("position",value);
+        Intent intent = new Intent(TopDealsActivity.this, OfferDetailsActivity.class);
+        String value = String.valueOf(position);
+        intent.putExtra("position", value);
         startActivity(intent);
     }
 }

@@ -82,12 +82,11 @@
         xmlns:ads="http://schemas.android.com/apk/res-auto"
         android:id="@+id/adView"
         android:layout_width="match_parent"
-        android:layout_height="35dp"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="false"
         ads:adSize="SMART_BANNER"
         android:layout_below="@id/scrollView"
-
         ads:adUnitId="ca-app-pub-3940256099942544/6300978111">
     </com.google.android.gms.ads.AdView>
 
@@ -102,7 +101,6 @@
         android:id="@+id/tab_categories">
     </android.support.design.widget.TabLayout>
 
-
     <ImageButton
         android:id="@+id/deal_Of_Day"
         android:layout_width="match_parent"
@@ -112,7 +110,6 @@
         android:scaleType="fitXY"
         android:src="@drawable/dealday" />
 
-
     <android.support.v4.view.ViewPager
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
@@ -120,12 +117,5 @@
         android:layout_below="@id/tab_categories">
 
     </android.support.v4.view.ViewPager>
-
-
-
-
-
-
-
 
 </RelativeLayout>

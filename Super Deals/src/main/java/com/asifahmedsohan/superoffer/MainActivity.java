@@ -17,7 +17,9 @@ import android.widget.Toast;
 
 import com.asifahmedsohan.superoffer.usersession.UserSession;
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.FitCenter;
 import com.daimajia.slider.library.SliderLayout;
+import com.daimajia.slider.library.SliderTypes.BaseSliderView;
 import com.daimajia.slider.library.SliderTypes.DefaultSliderView;
 import com.getkeepsafe.taptargetview.TapTarget;
 import com.getkeepsafe.taptargetview.TapTargetSequence;
@@ -38,10 +40,8 @@ import es.dmoral.toasty.Toasty;
 
 public class MainActivity extends AppCompatActivity {
 
-
     //ImageButton
     private ImageButton DealsOfTheDay;
-
 
     //Fragments_categories
     private TabLayout tabLayout;
@@ -51,10 +51,10 @@ public class MainActivity extends AppCompatActivity {
     private SliderLayout sliderShow;
     private AdView mAdView;
 
-   //to get user session data
+    //to get user session data
     private UserSession session;
 
-    private String  first_time;
+    private String first_time;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,36 +62,29 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        DealsOfTheDay=(ImageButton)findViewById(R.id.deal_Of_Day);
-
+        DealsOfTheDay = (ImageButton) findViewById(R.id.deal_Of_Day);
         loadBannerAd();
 
-        tabLayout=findViewById(R.id.tab_categories);
-        viewPager=findViewById(R.id.view_pager);
-        adapter=new ViewPagerAdapter(getSupportFragmentManager());
+        tabLayout = findViewById(R.id.tab_categories);
+        viewPager = findViewById(R.id.view_pager);
+        adapter = new ViewPagerAdapter(getSupportFragmentManager());
 
 
         DealsOfTheDay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Intent TopDeals=new Intent(MainActivity.this,TopDealsActivity.class);
+                Intent TopDeals = new Intent(MainActivity.this, TopDealsActivity.class);
                 startActivity(TopDeals);
-
             }
         });
-
-
-
         //add Fragment Here
-        adapter.AddFragment(new FragmentTelecom(),"Telecom");
-        adapter.AddFragment(new FragmentFood(),"Food");
-        adapter.AddFragment(new FragmentFashion(),"Fashion");
+        adapter.AddFragment(new FragmentTelecom(), "Telecom");
+        adapter.AddFragment(new FragmentFood(), "Food");
+        adapter.AddFragment(new FragmentFashion(), "Fashion");
 
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
-
-
 
         Typeface typeface = ResourcesCompat.getFont(this, R.font.blacklist);
         TextView appname = findViewById(R.id.appname);
@@ -99,7 +92,6 @@ public class MainActivity extends AppCompatActivity {
 
         //retrieve session values and display on listviews
         getValues();
-
         //ImageSLider
         inflateImageSlider();
 
@@ -135,7 +127,6 @@ public class MainActivity extends AppCompatActivity {
                                 .tintTarget(true)
                                 .transparentTarget(true)
                                 .outerCircleColor(R.color.first))
-
 
 
                 .listener(new TapTargetSequence.Listener() {
@@ -181,17 +172,15 @@ public class MainActivity extends AppCompatActivity {
         sliderImages.add("https://firebasestorage.googleapis.com/v0/b/super-deals-2da8b.appspot.com/o/sliderImages%2Foffer%20(3).jpg?alt=media&token=7fcbe7a8-dd64-47fa-a0e2-e73a705fcbf6");
         sliderImages.add("https://firebasestorage.googleapis.com/v0/b/super-deals-2da8b.appspot.com/o/sliderImages%2Foffer%20(4).jpg?alt=media&token=92904bae-fbb0-4877-8a29-10b3b5375369");
 
-
-
         for (String s : sliderImages) {
             DefaultSliderView sliderView = new DefaultSliderView(this);
-            Log.d("imagelink","wow");
+            Log.d("imagelink", "wow");
             sliderView.image(s);
+            sliderView.setScaleType(BaseSliderView.ScaleType.CenterInside);
             sliderShow.addSlider(sliderView);
         }
 
         sliderShow.setPresetIndicator(SliderLayout.PresetIndicators.Right_Bottom);
-
     }
 
     @Override
@@ -200,6 +189,5 @@ public class MainActivity extends AppCompatActivity {
         super.onStop();
 
     }
-
 
 }
