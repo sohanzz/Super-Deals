@@ -4,22 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".OfferDetailsActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".OfferDetailsActivity">
 
 
     <ImageView
 
-            android:id="@+id/offer_image"
-            android:layout_width="match_parent"
-            android:layout_height="180dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="0dp"
-            android:layout_marginTop="0dp"
-            android:adjustViewBounds="true"
-            android:scaleType="fitXY"
-            app:srcCompat="@drawable/offer" />
+        android:id="@+id/offer_image"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/offer" />
 
 
     <RelativeLayout
@@ -36,9 +36,9 @@
             android:layout_alignParentTop="true"
             android:layout_marginStart="12dp"
             android:layout_marginTop="22dp"
-            android:textStyle="bold"
+            android:text="@string/demo_name"
             android:textSize="20sp"
-            android:text="@string/demo_name" />
+            android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/logo"
@@ -53,12 +53,12 @@
             android:id="@+id/offer_short"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/name"
             android:layout_alignStart="@+id/name"
             android:layout_marginTop="5dp"
-            android:layout_below="@+id/name"
             android:text="@string/demo_offer"
-            android:textSize="17sp"
-            android:textColor="@color/md_black_1000"/>
+            android:textColor="@color/md_black_1000"
+            android:textSize="17sp" />
 
         <TextView
             android:id="@+id/expire_date"
@@ -68,72 +68,66 @@
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="5dp"
             android:text="@string/demo_date"
-            android:textColor="#00695C"/>
+            android:textColor="#00695C" />
 
 
         <View
 
             android:id="@+id/line"
             android:layout_width="match_parent"
-            android:layout_height= "3dp"
+            android:layout_height="3dp"
             android:layout_below="@id/expire_date"
-            android:background="#FF0000"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp"
+            android:background="#FF0000" />
 
 
-    <TextView
-        android:id="@+id/description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/line"
-        android:layout_marginStart="10dp"
-        android:textSize="25dp"
-        android:text="Description"
-        android:textStyle="bold"/>
-
-
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/line"
+            android:layout_marginStart="10dp"
+            android:text="Description"
+            android:textSize="25dp"
+            android:textStyle="bold" />
 
 
         <TextView
             android:id="@+id/details_offer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
             android:layout_below="@id/description"
-            android:layout_marginTop="25dp"
+            android:layout_alignParentStart="true"
             android:layout_marginStart="17dp"
-            android:textSize="20dp"
+            android:layout_marginTop="25dp"
+            android:text="TextView"
             android:textColor="@color/md_black_1000"
-            android:text="TextView" />
+            android:textSize="20dp" />
 
         <TextView
             android:id="@+id/details_condition"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/details_offer"
             android:layout_below="@id/details_offer"
+            android:layout_alignStart="@+id/details_offer"
             android:layout_marginTop="25dp"
+            android:text="TextView"
             android:textSize="22dp"
-            android:textStyle="bold"
-            android:text="TextView" />
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/details_payment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/details_condition"
             android:layout_below="@id/details_condition"
+            android:layout_alignStart="@+id/details_condition"
             android:layout_marginTop="25dp"
             android:text="TextView"
-            android:textSize="20dp"
-            android:textColor="@color/md_black_1000"/>
-
-
+            android:textColor="@color/md_black_1000"
+            android:textSize="20dp" />
 
 
     </RelativeLayout>
-
-
 
 
 </RelativeLayout>

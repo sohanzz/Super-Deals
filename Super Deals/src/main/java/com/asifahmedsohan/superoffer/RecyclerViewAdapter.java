@@ -25,9 +25,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     int positn;
     MyViewHolder hldr;
 
-    public RecyclerViewAdapter(Context mContext, List<Offer> mData) {
+    private ItemClickListener mItemClickListener;
+
+
+    public RecyclerViewAdapter(Context mContext, List<Offer> mData , ItemClickListener itemClickListener) {
         this.mContext = mContext;
         this.mData = mData;
+        this.mItemClickListener=itemClickListener;
     }
 
 
@@ -35,7 +39,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public MyViewHolder onCreateViewHolder( ViewGroup parent, int viewType) {
 
         View v=LayoutInflater.from(mContext).inflate(R.layout.activity_dealsmini,parent,false);
-        MyViewHolder vHolder=new MyViewHolder(v);
+        MyViewHolder vHolder=new MyViewHolder(v, mItemClickListener);
 
         return vHolder;
 
@@ -95,22 +99,37 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     }
 
-    public static class MyViewHolder extends  RecyclerView.ViewHolder{
+    public static class MyViewHolder extends  RecyclerView.ViewHolder implements View.OnClickListener {
 
         private TextView of_name;
         private  TextView of_desMini;
         private  TextView of_date;
         private ImageView of_logo;
 
-        public MyViewHolder(View itemview){
-            super(itemview);
+        ItemClickListener itemClickListener;
+
+        public MyViewHolder(View itemView , ItemClickListener itemClickListener){
+            super(itemView);
 
             of_name=(TextView) itemView.findViewById(R.id.name);
             of_desMini=(TextView)itemView.findViewById(R.id.offer_short);
             of_date=(TextView)itemView.findViewById(R.id.expire_date);
-            of_logo=(ImageView)itemview.findViewById(R.id.logo);
+            of_logo=(ImageView)itemView.findViewById(R.id.logo);
+            this.itemClickListener=itemClickListener;
+
+
+            itemView.setOnClickListener(this);
         }
 
+        @Override
+        public void onClick(View v) {
+
+            itemClickListener.ItemClickListener(getAdapterPosition());
+        }
+    }
+
+    public interface ItemClickListener{
+        void ItemClickListener(int position);
     }
 
 
